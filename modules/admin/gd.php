@@ -1,0 +1,25 @@
+<?php
+header("content-type:image/png");
+$img=imagecreatetruecolor(200,200);
+$color=imagecolorallocate($img,0,255,0);
+imagefill($img,0,0,$color);
+
+$fontcolor=imagecolorallocate($img,mt_rand(0,255),mt_rand(0,255),mt_rand(0,255));
+//$font=imagestring($img,5,0,0,"asd",$fontcolor);
+$arr=imagettfbbox(30,0,"asd.ttf","asd");
+$zhongzi='123456789asdf';
+$str='';
+for($i=0;$i<4;$i++){
+    $str.=$zhongzi[mt_rand(0,strlen($zhongzi)-1)];
+}
+imagettftext($img,mt_rand(20,40),mt_rand(-10,10),0,$arr[1]-$arr[5],$fontcolor,"asd.ttf",$str);//返回数组
+for($i=0;$i<50;$i++){
+    $fontcolor=imagecolorallocate($img,mt_rand(0,255),mt_rand(0,255),mt_rand(0,255));
+    imageline($img,mt_rand(0,200),mt_rand(0,200),mt_rand(0,200),mt_rand(0,200),$fontcolor);//划线
+}
+for($i=0;$i<1000;$i++){
+    $fontcolor=imagecolorallocate($img,mt_rand(0,255),mt_rand(0,255),mt_rand(0,255));
+    imagesetpixel($img,mt_rand(0,200),mt_rand(0,200),$fontcolor);
+}
+imagepng($img);
+?>

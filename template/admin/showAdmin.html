@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>查看管理员</title>
+    <link rel="stylesheet" href="{CSS_URL}/bootstrap.css">
+</head>
+<style>
+    tr,th,td{
+        text-align: center;
+    }
+    button>a{
+        display: block;
+        width:100%;
+        height:100%;
+        color: #fff;
+    }
+</style>
+<body>
+    <table class="table table-bordered text-center">
+        <tr>
+            <th>姓名</th>
+            <th>角色</th>
+            <th colspan="2">操作</th>
+        </tr>
+        {foreach $message as $v}
+        <tr>
+            <td>{$v["aname"]}</td>
+            <td>{$v["rname"]}</td>
+            <td><button class="btn btn-danger"><a href="">删除</a></button></td>
+            <td><button class="btn btn-info"><a href="">编辑</a></button></td>
+        </tr>
+        {/foreach}
+    </table>
+</body>
+</html>
