@@ -35,8 +35,8 @@ class index{
             "message"=>"'{$message}'",
             "adminUser"=>"'{$adminUser}'"
         );
-        if($db->insert($arr)){
-          echo $db->db->insert_id;
+        if($db->insert($arr)>0){
+          echo $db->mysql->insert_id;
         }
     }
     function editRole(){
@@ -52,7 +52,8 @@ class index{
             "message"=>"'{$message}'",
             "adminUser"=>"'{$adminUser}'"
         );
-        if($db->where("roleid=".$roleid)->update($arr)){
+        $result=$db->where("roleid=".$roleid)->update($arr);
+        if($result>0){
             echo "ok";
         }
     }
@@ -95,8 +96,6 @@ class index{
                 "roleid"=>"'{$roleid}'"
             );
             $result=$db->insert($arr);
-            var_dump($result);
-            exit;
             if($result){
                 echo "<script>alert('添加成功！');location.href='index.php?m=admin&f=index&a=showAdmin'</script>";
             }

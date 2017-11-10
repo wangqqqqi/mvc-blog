@@ -1,5 +1,5 @@
 <?php
-class login{
+class login extends main{
     function init(){
         $sobj=new Smarty();
         $sobj->setTemplateDir('template');
@@ -31,9 +31,13 @@ class login{
         $upass=md5(P("upass"));
 
         $dbobj=new db("user");
-        if(count($dbobj->where("uname='{$uname}' and upass='{$upass}'")->find())>0){
-            $_SESSION["login"]="yes";
-            echo "<script>alert('登录成功！');location.href='index.php?m=index&f=index'</script>";
+        $result=$dbobj->where("uname='{$uname}' and upass='{$upass}'")->find();
+        if(count($result)>0){
+            $index=md5("uekblog");
+            $_SESSION[$index]="yes";
+            $_SESSION["uid"]=$result['uid'];
+            $_SESSION['uname']=$result['uname'];
+            echo "<script>alert('登录成功！');location.href='index.php?m=index&f=index&a=init'</script>";
 
         }else{
             echo "<script>alert('用户名或密码错误！');location.href='index?m=index&f=login'</script>";
@@ -56,5 +60,13 @@ class login{
         $obj=new code();
         $obj->codeUrl="asd.ttf";
         $obj->output();
+    }
+    function logout(){
+        foreach ($_SESSION as $k=>$v){
+            unset($_SESSION[$k]);
+        }
+        $this->smarty->assign("errorInfo","退出成功");
+        $this->smarty->assign("uppage","index.php");
+        $this->smarty->display("index/success.html");
     }
 }

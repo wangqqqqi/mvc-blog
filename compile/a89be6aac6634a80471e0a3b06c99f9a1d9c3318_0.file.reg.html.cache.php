@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.30, created on 2017-10-31 06:30:32
+/* Smarty version 3.1.30, created on 2017-11-09 06:08:08
   from "D:\wamp\www\web\mvcyyy\template\index\reg.html" */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.30',
-  'unifunc' => 'content_59f81888e436c2_53307674',
+  'unifunc' => 'content_5a03f0c8a97890_77077366',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'a89be6aac6634a80471e0a3b06c99f9a1d9c3318' => 
     array (
       0 => 'D:\\wamp\\www\\web\\mvcyyy\\template\\index\\reg.html',
-      1 => 1509431426,
+      1 => 1510207374,
       2 => 'file',
     ),
   ),
@@ -20,8 +20,8 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_59f81888e436c2_53307674 (Smarty_Internal_Template $_smarty_tpl) {
-$_smarty_tpl->compiled->nocache_hash = '2507959f81888e08fa2_40157666';
+function content_5a03f0c8a97890_77077366 (Smarty_Internal_Template $_smarty_tpl) {
+$_smarty_tpl->compiled->nocache_hash = '156555a03f0c8a57ec8_75672845';
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -53,8 +53,10 @@ $_smarty_tpl->compiled->nocache_hash = '2507959f81888e08fa2_40157666';
         float: left;
         padding-top:50px;
         padding-left: 50px;
-        color: #4A80D6;
         font-size: 50px;
+    }
+    .head>a{
+        color: #4A80D6;
     }
     .login{
         width:362px;
@@ -149,7 +151,9 @@ $_smarty_tpl->compiled->nocache_hash = '2507959f81888e08fa2_40157666';
 <body>
 <form action="index.php?m=index&f=reg&a=check" method="post">
     <div class="head">
+        <a href="index.php?m=index">
         悦读
+        </a>
     </div>
     <div class="login">
         <div class="headline">
@@ -157,9 +161,9 @@ $_smarty_tpl->compiled->nocache_hash = '2507959f81888e08fa2_40157666';
             <div class="reg"><a href="index?m=index&f=reg">注册</a></div>
         </div>
         <ul class="int">
-            <li>&#xe600; <input name="aname" type="text" placeholder ="请输入用户名"></li>
-            <li>&#xe631; <input name="apass" type="password" placeholder="请输入密码"></li>
-            <li>&#xe631; <input name="apass" type="password" placeholder="请确认密码"></li>
+            <li>&#xe600; <input id="uname" name="uname" type="text" placeholder ="请输入用户名"></li>
+            <li>&#xe631; <input id="upass" name="upass" type="password" placeholder="请输入密码"></li>
+            <li>&#xe631; <input id="upass2" name="upass2" type="password" placeholder="请确认密码"></li>
             <li>&#xe624; <input name="imgcode" type="text" placeholder="请输入验证码">
                 <div class="canvas">
                     <img src="index.php?m=admin&f=login&a=imgcode" alt="" onclick="this.src=this.src+'&code='+Math.random()" style="cursor: pointer">
@@ -168,10 +172,22 @@ $_smarty_tpl->compiled->nocache_hash = '2507959f81888e08fa2_40157666';
             <li>&#xe647; <input type="text" placeholder="请输入手机号"></li>
             <li>&#xe638; <input type="text" placeholder="请输入手机验证码"></li>
         </ul>
-        <input type="submit" value="注 册">
+        <input type="submit" style="outline: none" value="注 册">
     </div>
 </form>
 
 </body>
-</html><?php }
+</html>
+<?php echo '<script'; ?>
+ src="<?php echo JS_URL;?>
+/jquery-3.2.1.js"><?php echo '</script'; ?>
+>
+<?php echo '<script'; ?>
+ src="<?php echo JS_URL;?>
+/jquery.validate.js"><?php echo '</script'; ?>
+>
+<?php echo '<script'; ?>
+ src="<?php echo JS_URL;?>
+/reg.js"><?php echo '</script'; ?>
+><?php }
 }

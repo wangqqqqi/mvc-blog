@@ -109,15 +109,15 @@
     <div class="login">
         <div class="log">登录</div>
         <ul class="int">
-            <li>&#xe600; <input name="aname" type="text" placeholder ="请输入用户名"></li>
-            <li>&#xe631; <input name="apass" type="password" placeholder="请输入密码"></li>
-            <li>&#xe624; <input name="imgcode" type="text" placeholder="请输入验证码">
+            <li>&#xe600; <input name="aname" type="text" autocomplete="off" placeholder ="请输入用户名"></li>
+            <li>&#xe631; <input name="apass" type="password" autocomplete="off" placeholder="请输入密码"></li>
+            <li>&#xe624; <input name="imgcode" type="text" autocomplete="off" placeholder="请输入验证码">
                 <div class="canvas">
                     <img src="index.php?m=admin&f=login&a=imgcode" alt="" onclick="this.src=this.src+'&code='+Math.random()" style="cursor: pointer">
                 </div>
             </li>
-            <li>&#xe647; <input type="text" placeholder="请输入手机号"></li>
-            <li>&#xe638; <input type="text" placeholder="请输入手机验证码"></li>
+            <li>&#xe647; <input type="text" autocomplete="off" placeholder="请输入手机号"></li>
+            <li>&#xe638; <input type="text" autocomplete="off" placeholder="请输入手机验证码"></li>
         </ul>
         <input type="submit" value="登 录">
     </div>

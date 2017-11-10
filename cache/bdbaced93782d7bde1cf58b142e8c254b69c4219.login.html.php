@@ -1,24 +1,24 @@
 <?php
-/* Smarty version 3.1.30, created on 2017-11-01 00:55:26
+/* Smarty version 3.1.30, created on 2017-11-10 07:58:17
   from "D:\wamp\www\web\mvcyyy\template\index\login.html" */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.30',
-  'unifunc' => 'content_59f91b7e66b543_98342735',
+  'unifunc' => 'content_5a055c19e85241_44944763',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '55e6077c66d6e71a026f5d416ce7746c249333de' => 
     array (
       0 => 'D:\\wamp\\www\\web\\mvcyyy\\template\\index\\login.html',
-      1 => 1509497670,
+      1 => 1510015855,
       2 => 'file',
     ),
   ),
   'cache_lifetime' => 3600,
 ),true)) {
-function content_59f91b7e66b543_98342735 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5a055c19e85241_44944763 (Smarty_Internal_Template $_smarty_tpl) {
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -194,9 +194,9 @@ function content_59f91b7e66b543_98342735 (Smarty_Internal_Template $_smarty_tpl)
             <div class="reg"><a href="index?m=index&f=reg">注册</a></div>
         </div>
         <ul class="int">
-            <li>&#xe600; <input type="text" name="uname" placeholder ="请输入用户名"></li>
-            <li>&#xe631; <input type="password" name="upass" placeholder="请输入密码"></li>
-            <li>&#xe624; <input type="text" name="imgcode" placeholder="请输入验证码">
+            <li>&#xe600; <input type="text" name="uname" autocomplete="off" placeholder ="请输入用户名"></li>
+            <li>&#xe631; <input type="password" name="upass" autocomplete="off" placeholder="请输入密码"></li>
+            <li>&#xe624; <input type="text" name="imgcode" autocomplete="off" placeholder="请输入验证码">
                 <div class="canvas">
                     <img src="index.php?m=admin&f=login&a=imgcode" alt="" onclick="this.src=this.src+'&code='+Math.random()" style="cursor: pointer">
                 </div>

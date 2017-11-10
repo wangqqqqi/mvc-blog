@@ -40,7 +40,7 @@ include_once LIBS_PATH."/db.class.php";
 include_once LIBS_PATH."/smarty/Smarty.class.php";
 //include_once LIBS_PATH."/session.class.php";
 include_once LIBS_PATH."/main.class.php";
-include_once LIBS_PATH."/indexMain.class.php";
+//include_once LIBS_PATH."/indexMain.class.php";
 $configs = include_once APP_PATH . "/config.php";
 //include_once LIBS_PATH."/tree.class.php";
 //include_once LIBS_PATH."/upload.class.php";

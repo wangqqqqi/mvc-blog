@@ -4,13 +4,46 @@ class index{
         $sobj=new Smarty();
         $sobj->setTemplateDir('template');
         $sobj->setCompileDir('compile');
-//        $sobj->setCacheDir('cache');
-//        $sobj->setCaching(Smarty::CACHING_LIFETIME_CURRENT);
-//        $sobj->setTemplateURL();
-//        $sobj->setCompileURL();
-//        $sobj->setCacheURL();
-//        $sobj->cache=true;
-//        $sobj->assign('title','我是标题哦');
+        $sobj->setCacheDir('cache');
+        $sobj->setCaching(Smarty::CACHING_LIFETIME_CURRENT);
+        $index=md5("uekblog");
+        $sobj->assign("userlogin",isset($_SESSION[$index])?$_SESSION[$index]:"no");
         $sobj->display('index/index.html');
+
+    }
+    function header(){
+        $sobj=new Smarty();
+        $sobj->setTemplateDir('template');
+        $sobj->setCompileDir('compile');
+        $sobj->setCacheDir('cache');
+        $sobj->setCaching(Smarty::CACHING_LIFETIME_CURRENT);
+        if(isset($_SESSION["userlogin"])){
+            $sobj->assign("userlogin",$_SESSION["userlogin"]);
+        }
+        $sobj->display('index/header.html');
+    }
+    function content(){
+        $sobj=new Smarty();
+        $sobj->setTemplateDir('template');
+        $sobj->setCompileDir('compile');
+        $sobj->setCacheDir('cache');
+        $sobj->setCaching(Smarty::CACHING_LIFETIME_CURRENT);
+        $sobj->display("index/content.html");
+    }
+    function all(){
+        $sobj=new Smarty();
+        $sobj->setTemplateDir('template');
+        $sobj->setCompileDir('compile');
+        $sobj->setCacheDir('cache');
+        $sobj->setCaching(Smarty::CACHING_LIFETIME_CURRENT);
+        $sobj->display("index/all.html");
+    }
+    function more(){
+        $sobj=new Smarty();
+        $sobj->setTemplateDir('template');
+        $sobj->setCompileDir('compile');
+        $sobj->setCacheDir('cache');
+        $sobj->setCaching(Smarty::CACHING_LIFETIME_CURRENT);
+        $sobj->display("index/more.html");
     }
 }

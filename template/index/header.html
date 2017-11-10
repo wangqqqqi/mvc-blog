@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>悦读</title>
+    <script src="{JS_URL}/jquery-3.2.1.js"></script>
+    <script src="{JS_URL}/header.js"></script>
+    <link rel="stylesheet" href="{CSS_URL}/header.css">
+</head>
+<body>
+<header>
+    <h2>悦读</h2>
+    <main>
+        <h4><a href="">首页</a></h4>
+        <div class="search">
+            <input type="text" placeholder="搜索">
+            <div class="search-icon">&#xe672;</div>
+        </div>
+    </main>
+    {if $userlogin == "yes"}
+    <div class="person">
+        <div class="headImg">
+            <img src="{IMG_URL}/q8.jpg" alt="">
+        </div>
+        <div class="angle"></div>
+        <ul class="selects">
+            <li><a href="">&#xe662; 我的主页</a></li>
+            <li><a href="index.php?m=index&f=personal">&#xe600; 个人中心</a></li>
+            <li><a href="index.php?m=index&f=login&a=logout">&#xe645; 退出登录</a></li>
+        </ul>
+    </div>
+    {else}
+    <div class="login"><a href="index.php?m=index&f=login">登录</a></div>
+    <div class="reg"><a href="index.php?m=index&f=reg">注册</a></div>
+    {/if}
+</header>
+

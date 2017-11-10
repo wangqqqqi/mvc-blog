@@ -37,12 +37,11 @@ class login{
 
         $db=new db("admin");
         $result=$db->where("aname='{$aname}' and apass='{$apass}'")->find();
-        if(count($result)>0){
+
+        if($result){
             $_SESSION["login"]="yes";
             $_SESSION["roleid"]=$result['roleid'];
             $_SESSION['aname']=$result['aname'];
-//            var_dump($_SESSION);
-//            exit;
             echo "<script>alert('登录成功！');location.href='index.php?m=admin&f=index'</script>";
         }else{
             echo "<script>alert('用户名或密码错误！');location.href='index?m=admin&f=login'</script>";

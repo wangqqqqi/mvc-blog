@@ -1,172 +1,33 @@
 <?php
-/* Smarty version 3.1.30, created on 2017-10-30 06:34:29
+/* Smarty version 3.1.30, created on 2017-11-08 03:55:06
   from "D:\wamp\www\web\mvcyyy\template\index\content.html" */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.30',
-  'unifunc' => 'content_59f6c7f551f911_50536199',
+  'unifunc' => 'content_5a02801a7d31c3_63023861',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'd412f731048a84d1430079c5aa12f0e932400bda' => 
     array (
       0 => 'D:\\wamp\\www\\web\\mvcyyy\\template\\index\\content.html',
-      1 => 1509345266,
+      1 => 1510113305,
       2 => 'file',
     ),
   ),
   'includes' => 
   array (
+    'file:./header.html' => 1,
+    'file:./footer.html' => 1,
   ),
 ),false)) {
-function content_59f6c7f551f911_50536199 (Smarty_Internal_Template $_smarty_tpl) {
-$_smarty_tpl->compiled->nocache_hash = '1421459f6c7f54b6e66_25958105';
+function content_5a02801a7d31c3_63023861 (Smarty_Internal_Template $_smarty_tpl) {
+$_smarty_tpl->compiled->nocache_hash = '132175a02801a749174_10136001';
+$_smarty_tpl->_subTemplateRender("file:./header.html", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 9999, $_smarty_tpl->cache_lifetime, array(), 0, false);
 ?>
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>详情</title>
-    <?php echo '<script'; ?>
- src="<?php echo JS_URL;?>
-/jquery-3.2.1.js"><?php echo '</script'; ?>
->
-    <?php echo '<script'; ?>
- src="<?php echo JS_URL;?>
-/index.js"><?php echo '</script'; ?>
->
-</head>
-<style>
-    @font-face {
-        font-family: 'iconfont';  /* project id 449584 */
-        src: url('http://at.alicdn.com/t/font_449584_a0xmjhqtylkmaemi.eot');
-        src: url('http://at.alicdn.com/t/font_449584_a0xmjhqtylkmaemi.eot?#iefix') format('embedded-opentype'),
-        url('http://at.alicdn.com/t/font_449584_a0xmjhqtylkmaemi.woff') format('woff'),
-        url('http://at.alicdn.com/t/font_449584_a0xmjhqtylkmaemi.ttf') format('truetype'),
-        url('http://at.alicdn.com/t/font_449584_a0xmjhqtylkmaemi.svg#iconfont') format('svg');
-    }
-    *{
-        margin: 0;
-        padding:0;
-        text-decoration: none;
-        list-style: none;
-        user-select: none;
-    }
-    header{
-        width:100%;
-        height:56px;
-        border-bottom: 1px solid #f0f0f0;
-        position: relative;
-    }
-    header>h2{
-        color: #4A80D6;
-        margin-left: 20px;
-        line-height: 56px;
-        font-weight: normal;
-        float: left;
-    }
-    header>main{
-        width:944px;
-        height:100%;
-        margin:0 auto;
-    }
-    main>h4:first-child>a{
-        line-height: 56px;
-        color: #4A80D6;
-        font-weight: normal;
-        float: left;
-        margin-right: 40px;
-    }
-    main>h4:nth-child(2)>a{
-        color: #000;
-        line-height: 56px;
-        font-weight: normal;
-        float: left;
-        margin-right: 40px;
-    }
-    .search{
-        width:160px;
-        height:40px;
-        margin-top: 6px;
-        margin-right: 10px;
-        border-radius:20px;
-        float: right;
-        position: relative;
-    }
-    .search>input{
-        width:140px;
-        height:100%;
-        padding-left: 20px;
-        border: none;
-        background:#eeeeee;
-        color: #a0a0a0;
-        border-radius:20px;
-        outline: none;
-    }
-    .search-icon{
-        width:30px;
-        height:30px;
-        border-radius: 50%;
-        position: absolute;
-        top:5px;
-        right: 5px;
-        z-index: 3;
-        font-family:iconfont;
-        color: #fff;
-        text-align: center;
-        line-height: 30px;
-        cursor: pointer;
-    }
-    .login{
-        width:60px;
-        height:30px;
-        border: 1px solid #4A80D6;
-        border-radius: 15px;
-        line-height: 30px;
-        text-align: center;
-        position: absolute;
-        top:10px;
-        right:80px;
-        font-size: 12px;
-    }
-    .login>a{
-        display: block;
-        width:100%;
-        height:100%;
-        color:#4A80D6;
-    }
-    .login:hover{
-        background: #4A80D6;
-    }
-    .login:hover>a{
-        color: #fff;
-    }
-    .reg{
-        width:60px;
-        height:30px;
-        border: 1px solid #4A80D6;
-        border-radius: 15px;
-        line-height: 30px;
-        text-align: center;
-        position: absolute;
-        top:10px;
-        right:10px;
-        font-size: 12px;
-    }
-    .reg>a{
-        display: block;
-        width:100%;
-        height:100%;
-        color:#4A80D6;
-    }
-    .reg:hover{
-        background: #4A80D6;
-    }
-    .reg:hover>a{
-        color: #fff;
-    }
 
+<style>
     .article{
         width:700px;
         height:auto;
@@ -531,19 +392,6 @@ $_smarty_tpl->compiled->nocache_hash = '1421459f6c7f54b6e66_25958105';
         color: #9d9d9d;
     }
 </style>
-<body>
-    <header>
-        <h2>悦读</h2>
-        <main>
-            <h4><a href="">首页</a></h4>
-            <div class="search">
-                <input type="text" placeholder="搜索">
-                <div class="search-icon">&#xe672;</div>
-            </div>
-        </main>
-        <div class="login"><a href="index?m=index&f=login">登录</a></div>
-        <div class="reg"><a href="index?m=index&f=reg">注册</a></div>
-    </header>
     <section class="article">
         <div class="article-main">
             <span>时间告诉你，毕业一年后，真的有比一纸文凭更重要的东西</span>
@@ -686,6 +534,9 @@ $_smarty_tpl->compiled->nocache_hash = '1421459f6c7f54b6e66_25958105';
             </li>
         </ul>
     </section>
+    <?php $_smarty_tpl->_subTemplateRender("file:./footer.html", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 9999, $_smarty_tpl->cache_lifetime, array(), 0, false);
+?>
+
 </body>
 </html><?php }
 }

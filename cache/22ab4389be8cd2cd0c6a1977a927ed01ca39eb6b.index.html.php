@@ -1,11 +1,11 @@
 <?php
-/* Smarty version 3.1.30, created on 2017-11-03 00:42:57
+/* Smarty version 3.1.30, created on 2017-11-09 06:25:43
   from "D:\wamp\www\web\mvcyyy\template\admin\index.html" */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.30',
-  'unifunc' => 'content_59fbbb91901fb2_96213413',
+  'unifunc' => 'content_5a03f4e7dd7786_07132340',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
@@ -18,7 +18,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   ),
   'cache_lifetime' => 3600,
 ),true)) {
-function content_59fbbb91901fb2_96213413 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5a03f4e7dd7786_07132340 (Smarty_Internal_Template $_smarty_tpl) {
 ?>
 <!DOCTYPE HTML>
 <html>
@@ -39,7 +39,7 @@ function content_59fbbb91901fb2_96213413 (Smarty_Internal_Template $_smarty_tpl)
         </a>
       </div>
 
-    <div class="dl-log">欢迎zhangsan，<a href="index?m=admin&f=login&a=logout" title="退出系统" class="dl-log-quit">[退出]</a>
+    <div class="dl-log">欢迎lisisi，<a href="index?m=admin&f=login&a=logout" title="退出系统" class="dl-log-quit">[退出]</a>
     </div>
   </div>
    <div class="content">

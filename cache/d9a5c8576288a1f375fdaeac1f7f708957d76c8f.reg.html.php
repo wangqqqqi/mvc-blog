@@ -1,24 +1,24 @@
 <?php
-/* Smarty version 3.1.30, created on 2017-10-31 06:30:32
+/* Smarty version 3.1.30, created on 2017-11-09 09:30:26
   from "D:\wamp\www\web\mvcyyy\template\index\reg.html" */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.30',
-  'unifunc' => 'content_59f81888e50654_18909453',
+  'unifunc' => 'content_5a0420322bf155_94838367',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'a89be6aac6634a80471e0a3b06c99f9a1d9c3318' => 
     array (
       0 => 'D:\\wamp\\www\\web\\mvcyyy\\template\\index\\reg.html',
-      1 => 1509431426,
+      1 => 1510207374,
       2 => 'file',
     ),
   ),
   'cache_lifetime' => 3600,
 ),true)) {
-function content_59f81888e50654_18909453 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5a0420322bf155_94838367 (Smarty_Internal_Template $_smarty_tpl) {
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -50,8 +50,10 @@ function content_59f81888e50654_18909453 (Smarty_Internal_Template $_smarty_tpl)
         float: left;
         padding-top:50px;
         padding-left: 50px;
-        color: #4A80D6;
         font-size: 50px;
+    }
+    .head>a{
+        color: #4A80D6;
     }
     .login{
         width:362px;
@@ -146,7 +148,9 @@ function content_59f81888e50654_18909453 (Smarty_Internal_Template $_smarty_tpl)
 <body>
 <form action="index.php?m=index&f=reg&a=check" method="post">
     <div class="head">
+        <a href="index.php?m=index">
         悦读
+        </a>
     </div>
     <div class="login">
         <div class="headline">
@@ -154,9 +158,9 @@ function content_59f81888e50654_18909453 (Smarty_Internal_Template $_smarty_tpl)
             <div class="reg"><a href="index?m=index&f=reg">注册</a></div>
         </div>
         <ul class="int">
-            <li>&#xe600; <input name="aname" type="text" placeholder ="请输入用户名"></li>
-            <li>&#xe631; <input name="apass" type="password" placeholder="请输入密码"></li>
-            <li>&#xe631; <input name="apass" type="password" placeholder="请确认密码"></li>
+            <li>&#xe600; <input id="uname" name="uname" type="text" placeholder ="请输入用户名"></li>
+            <li>&#xe631; <input id="upass" name="upass" type="password" placeholder="请输入密码"></li>
+            <li>&#xe631; <input id="upass2" name="upass2" type="password" placeholder="请确认密码"></li>
             <li>&#xe624; <input name="imgcode" type="text" placeholder="请输入验证码">
                 <div class="canvas">
                     <img src="index.php?m=admin&f=login&a=imgcode" alt="" onclick="this.src=this.src+'&code='+Math.random()" style="cursor: pointer">
@@ -165,10 +169,13 @@ function content_59f81888e50654_18909453 (Smarty_Internal_Template $_smarty_tpl)
             <li>&#xe647; <input type="text" placeholder="请输入手机号"></li>
             <li>&#xe638; <input type="text" placeholder="请输入手机验证码"></li>
         </ul>
-        <input type="submit" value="注 册">
+        <input type="submit" style="outline: none" value="注 册">
     </div>
 </form>
 
 </body>
-</html><?php }
+</html>
+<script src="http://localhost/web/mvcyyy/static/js/jquery-3.2.1.js"></script>
+<script src="http://localhost/web/mvcyyy/static/js/jquery.validate.js"></script>
+<script src="http://localhost/web/mvcyyy/static/js/reg.js"></script><?php }
 }

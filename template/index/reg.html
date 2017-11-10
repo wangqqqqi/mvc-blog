@@ -28,8 +28,10 @@
         float: left;
         padding-top:50px;
         padding-left: 50px;
-        color: #4A80D6;
         font-size: 50px;
+    }
+    .head>a{
+        color: #4A80D6;
     }
     .login{
         width:362px;
@@ -84,7 +86,7 @@
         width:100%;
         height:16.666667%;
         font-family: iconfont;
-        font-size: 16px;
+        font-size: 14px;
         line-height: 50px;
         color: #9d9d9d;
         border-bottom: 1px solid #9d9d9d;
@@ -113,8 +115,9 @@
     }
     .canvas{
         width:120px;
-        height:50px;
+        height:45px;
         float: right;
+        margin-top: 2px;
     }
     .canvas>img{
         width:100%;
@@ -124,7 +127,9 @@
 <body>
 <form action="index.php?m=index&f=reg&a=check" method="post">
     <div class="head">
+        <a href="index.php?m=index">
         悦读
+        </a>
     </div>
     <div class="login">
         <div class="headline">
@@ -132,20 +137,23 @@
             <div class="reg"><a href="index?m=index&f=reg">注册</a></div>
         </div>
         <ul class="int">
-            <li>&#xe600; <input name="aname" type="text" placeholder ="请输入用户名"></li>
-            <li>&#xe631; <input name="apass" type="password" placeholder="请输入密码"></li>
-            <li>&#xe631; <input name="apass" type="password" placeholder="请确认密码"></li>
+            <li>&#xe600; <input id="uname" name="uname" type="text" placeholder ="请输入用户名"></li>
+            <li>&#xe631; <input id="upass" name="upass" type="password" placeholder="请输入密码"></li>
+            <li>&#xe631; <input id="upass2" name="upass2" type="password" placeholder="请确认密码"></li>
             <li>&#xe624; <input name="imgcode" type="text" placeholder="请输入验证码">
                 <div class="canvas">
                     <img src="index.php?m=admin&f=login&a=imgcode" alt="" onclick="this.src=this.src+'&code='+Math.random()" style="cursor: pointer">
                 </div>
             </li>
-            <li>&#xe647; <input type="text" placeholder="请输入手机号"></li>
+            <li>&#xe647; <input type="text" id="uphone" name="uphone" placeholder="请输入手机号"></li>
             <li>&#xe638; <input type="text" placeholder="请输入手机验证码"></li>
         </ul>
-        <input type="submit" value="注 册">
+        <input type="submit" style="outline: none" value="注 册">
     </div>
 </form>
 
 </body>
 </html>
+<script src="{JS_URL}/jquery-3.2.1.js"></script>
+<script src="{JS_URL}/jquery.validate.js"></script>
+<script src="{JS_URL}/reg.js"></script>

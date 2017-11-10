@@ -1,35 +1,44 @@
 <?php
-class db {
-    function __construct($tablename=""){
+//$dd=new mysqli("localhost","root","123456","www1703");
+class db{
+    public function __construct($table='')
+    {
         global $configs;
         $this->host=$configs["database"]["host"];
-        $this->port=$configs["database"]["port"];
         $this->user=$configs["database"]["user"];
-        $this->password=$configs["database"]["password"];
-        $this->database=$configs["database"]["database"];
-        $this->table=$tablename;
-
-        $this->ziduan='*';
+        $this->pasw=$configs["database"]["password"];
+        $this->name=$configs["database"]["database"];
+        $this->table=$table;
         $this->where=$this->limit='';
+        $this->ziduan='*';
         $this->connect();
-
-
+        $this->select();
     }
-
-    function connect(){
-        $this->db=new mysqli($this->host,$this->user,$this->password,$this->database,$this->port);
-        if(mysqli_connect_error()){
-            echo "数据库连接错误";
+    public function connect(){
+        $this->mysql=new mysqli($this->host,$this->user,$this->pasw,$this->name);
+        if(mysqli_connect_errno()){
+            echo "链接数据库错误";
             exit;
         }
-        $this->db->query("set names utf8");
+        $this->mysql->set_charset("utf8");
     }
-
-    function selectTable($tablename){
-        $this->table=$tablename;
+    public function settable($table){
+        $this->tablename=$table;
+        return $this;
     }
-
-    /*查询多条数据*/
+    public function where($where){
+        $this->where=" where ".$where;
+        return $this;
+    }
+    public function ziduan($ziduan){
+        $this->ziduan=$ziduan;
+        return $this;
+    }
+    public function limit($limit){
+        $this->limit=" limit ".$limit;
+        return $this;
+    }
+    //查询数据
     public function select($parm='')
     {
         if ($parm) {
@@ -37,60 +46,41 @@ class db {
         } else {
             $sql = "select " . $this->ziduan . " from " . $this->table . $this->where . $this->limit;
         }
-        $result=$this->db->query($sql);
+        $result=$this->mysql->query($sql);
         $arra=$result->fetch_all(MYSQLI_ASSOC);
         return $arra;
     }
-
     //查询单条数据
     public function find(){
         $sql="select ".$this->ziduan." from ".$this->table.$this->where.$this->limit;
-        $result=$this->db->query($sql);
+        $result=$this->mysql->query($sql);
         $row=$result->fetch_assoc();
         return $row;
     }
-    /*执行自定义的sql*/
-
-    function exec($sql){
-        $result=$this->db->query($sql);
-
-        return $result;
-
-    }
-
-    function filed($filed){
-        $this->opt["field"]=$filed;
-        return $this;
-    }
-    public function where($where){
-        $this->where=" where ".$where;
-        return $this;
-    }
-    function order($order){
-        $this->opt["order"]="ORDER BY ".$order;
-        return $this;
-    }
-    public function limit($limit){
-        $this->limit=" limit ".$limit;
-        return $this;
-    }
-
-    /*插入*/
-
-
-
-    public function insert($arr){
+    //增添数据
+    //insert into table ('name','age') values ('sa','sa')
+    public function insert($arrobj){
         $key='';
         $value='';
-        foreach ($arr as $k=>$v){
+        foreach ($arrobj as $k=>$v){
             $key.=$k.',';
             $value.=$v.',';
         }
         $key=substr($key,0,-1);
         $value=substr($value,0,-1);
         $sql="insert into ".$this->table." (".$key.")"." values (".$value.")";
-        $this->db->query($sql);
+        $this->mysql->query($sql);
+        return $this->mysql->affected_rows;
     }
+    //删除数据
+    //delete from abc where name=zhangsan
+    public function delete(){
+        $sql="delete from ".$this->table.$this->where;
+        $this->mysql->query($sql);
+        return $this->mysql->affected_rows;
+    }
+    //更改数据
+
     public function update($arr){
         $str='';
         foreach ($arr as $k=>$v){
@@ -99,20 +89,8 @@ class db {
         $str=substr($str,0,-2);
 
         $sql="update ".$this->table." set ".$str.$this->where;
-        $this->db->query($sql);
+        $this->mysql->query($sql);
+        return $this->mysql->affected_rows;
     }
-
-    public function delete(){
-        $sql="delete from ".$this->table.$this->where;
-        $this->db->query($sql);
-    }
-
 }
-
-
-
-
-
-
-
-
+?>

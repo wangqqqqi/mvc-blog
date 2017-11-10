@@ -38,7 +38,6 @@ BUI.use(['bui/grid','bui/data'],function(Grid,Data){
                             data:form.serializeToObject(),
                             datatype:'text',
                             success:function(data){
-                                console.log(data)
                                 if(editType=='add'){
                                     form.setFieldValue("roleid",data);
                                     $('input[name=roleid]').val(data);
